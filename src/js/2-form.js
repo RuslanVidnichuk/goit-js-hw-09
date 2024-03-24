@@ -23,8 +23,14 @@ function loadFromLS(key) {
     }
 }
 
+
+
 function saveInLS(key, value) {
-    const jsonSave = JSON.stringify(value);
+    const trimmedValue = {
+        mail: value.mail.trim(),
+        text: value.text.trim(),
+    };
+    const jsonSave = JSON.stringify(trimmedValue);
     localStorage.setItem(key, jsonSave);
 }
 
